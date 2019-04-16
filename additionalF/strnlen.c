@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   strnlen.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/06 18:57:57 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/16 15:44:43 by dphyliss         ###   ########.fr       */
+/*   Created: 2019/04/16 15:40:39 by dphyliss          #+#    #+#             */
+/*   Updated: 2019/04/16 15:44:21 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t		ft_strlen(const char *s)
+size_t		strnlen(const char *s, size_t maxlen)
 {
 	size_t	i;
 
-	if (s)
+	if (s && (maxlen > 0))		
 	{
 		i = 0;
-		while ((s[i] != '\0') && (i < 65535))
+		while ((s[i] != '\0') && (i < maxlen) && (i < 65535))
 		{
 			i++;
 		}
