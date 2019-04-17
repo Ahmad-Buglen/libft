@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 14:55:48 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/17 13:14:03 by dphyliss         ###   ########.fr       */
+/*   Created: 2019/04/17 13:14:28 by dphyliss          #+#    #+#             */
+/*   Updated: 2019/04/17 13:38:06 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strdup(const char *s1)
+char		*ft_strcpy(char *dst, const char *src)
 {
-	int		i;
-	int		j;
-	char	*duplicate;
+	size_t	i;
 
-	if (s1)
+	if (src)
 	{
 		i = 0;
-		while (s1[i] != '\0')
-			i++;
-		duplicate = (char *)malloc(sizeof(char) * i + 1);
-		if (duplicate == NULL)
-			return (NULL);
-		j = 0;
-		while (j <= i)
+		while (src[i] != '\0')
 		{
-			duplicate[j] = s1[j];
-			j++;
+			dst[i] = src[i];
+			i++;
 		}
-		duplicate[j + 1] = '\0';
-		return (duplicate);
+		dst[i + 1] = '\0';
 	}
-	return (NULL);
+	else if (src[0] == '\0')
+		dst[0] = '\0';
+	else if (src == NULL)
+		dst = NULL;
+	return (dst);
 }
