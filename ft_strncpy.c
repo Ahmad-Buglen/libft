@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 13:38:22 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/17 14:08:20 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/22 11:37:31 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,5 @@ char		*ft_strncpy(char *dst, const char *src, size_t len)
 			i++;
 		}
 	}
-	else if (src == NULL)
-		dst = NULL;
 	return (dst);
 }

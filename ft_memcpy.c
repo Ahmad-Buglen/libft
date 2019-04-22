@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 16:51:22 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/19 19:05:33 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/22 12:55:42 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void		*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
+	if ((dst == NULL) && (src == NULL))
+		return (NULL);
 	if (n > 0)
 	{
 		i = 0;

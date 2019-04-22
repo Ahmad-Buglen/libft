@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 12:16:43 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/18 14:36:09 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/22 11:39:45 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
-	if ((c > 0) && (s != NULL))
+	if ((c > 0) && (s))
 	{
 		i = 0;
 		while (s[i] != '\0')
@@ -26,7 +26,7 @@ char	*ft_strchr(const char *s, int c)
 			i++;
 		}
 	}
-	else if (('\0' == (char)c) && (s != NULL))
+	else if (('\0' == (char)c) && (s))
 	{
 		i = 0;
 		while (s[i] != '\0')

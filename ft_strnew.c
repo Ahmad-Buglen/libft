@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 17:14:19 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/20 17:18:54 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/22 12:32:08 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char		*ft_strnew(size_t size)
 	char	*point;
 
 	point = (char *)malloc(sizeof(char) * size);
-	if (point == NULL)
+	if ((point == NULL) || (size > 65535))
 		return (NULL);
 	else
 	{

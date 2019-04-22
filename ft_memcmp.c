@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 13:32:47 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/16 13:54:06 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/22 11:35:19 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,5 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	else if (s1 == s2)
 		return (0);
-	else if (s1 == NULL)
-		return ((int)('0' - (unsigned const char)s2));
-	else if (s2 == NULL)
-		return ((int)('0' - (unsigned const char)s1));
 	return (0);
 }
