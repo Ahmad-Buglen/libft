@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 09:52:41 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/23 12:39:30 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/23 15:53:33 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,27 +66,39 @@ char		**check_pointer(char const *s, char c, size_t size)
 
 void	memory_free(char **s)
 {
-
+	free(s);
 }
 
 char		**memory_allocate(char **s, char c, size_t size)
 {
-	size_t	i;
-	
-	while (*s)
+	int		i;
+	char	*buffer;
+
+	while ((--size) > 0)
 	{
+		printf("---");
 		i = 0;
-		while ((*s[i] != c) && (s[i] != '\0'))
+		while ((*s[i] != c) && (*s[i] != '\0'))
 			i++;
-		*s = (char *)malloc(sizeof(char) * i + 1);
-		if (*s == NULL)
+		printf("---");
+		buffer = ft_strdup(*s);
+		*s = (char *)malloc(sizeof(char) * (++i) + 1);
+		if ((NULL == *s) || (NULL == buffer))
 		{
 			memory_free(s);
 			return (NULL);
 		}
-		while (
-		++*s;
+		i = -1;
+		while ((buffer[++i] != c) && (buffer[i] != '\0'))
+		{
+			*s[i] = buffer[i];
+			printf("%c ",buffer[i]);
+		}
+		*s[++i] = '\0';
+		++(*s);
+		free(buffer);
 	}
+	return (s);
 }
 // ft_strsplit("*hello*fellow***students*", ’*’)
 char		**ft_strsplit(char const *s, char c)
@@ -105,15 +117,26 @@ char		**ft_strsplit(char const *s, char c)
 }
 
 int main()
-{   
+{
+   printf("---");	
+	char **test1;
 	char **test;
+	printf("---");
 	test = check_pointer("*hello*fellow***students*", '*', 3);
-	int i = 2;
-	while (i >= 0)
-	{
-		printf("%s\n", test[i]);
-		--i;
-	}
+	printf("---");
+	test1 = memory_allocate(test, '*', 3);
+	int i = -1;
+	while (++i < 3)
+		printf("%s\n", test1[i]);
+
+//	char **test;
+//	test = check_pointer("*hello*fellow***students*", '*', 3);
+//	int i = 2;
+//	while (i >= 0)
+//	{
+//		printf("%s\n", test[i]);
+//		--i;
+//	}
 
 	
 
