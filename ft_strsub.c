@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/13 16:51:22 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/22 13:55:48 by dphyliss         ###   ########.fr       */
+/*   Created: 2019/04/22 14:44:59 by dphyliss          #+#    #+#             */
+/*   Updated: 2019/04/22 15:19:28 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memcpy(void *dst, const void *src, size_t n)
+char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
+	size_t	j;
+	char	*sub;
 
-	if ((dst == NULL) && (src == NULL))
-		return (NULL);
-	if (n > 0)
+	if (s)
 	{
+		sub = (char *)malloc(sizeof(char) * len + 1);
+		if (sub == NULL)
+			return (NULL);
+		if (len == 0)
+			return (sub);
 		i = 0;
-		while (i < n)
+		j = start;
+		while ((i < len) && (s[i] != '\0'))
 		{
-			((char *)dst)[i] = ((char *)src)[i];
+			sub[i] = s[j];
 			i++;
+			j++;
 		}
+		sub[i + 1] = '\0';
+		return (sub);
 	}
-	return (dst);
+	return (NULL);
 }
