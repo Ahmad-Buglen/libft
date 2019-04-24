@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 15:43:44 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/23 16:18:48 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/24 19:57:08 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef struct	s_list
+{
+	void 		*content;
+	size_t 		content_size;
+	struct 		s_list *next;
+}				t_list;
+
+void	ft_swap_char(char *a, char *b);
+void	ft_swap_int(int *a, int *b);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -65,5 +74,8 @@ void	ft_putchar(char c);
 void	ft_putstr(char const *s); 
 void	ft_putendl(char const *s);
 void	ft_putnbr(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
 
 #endif

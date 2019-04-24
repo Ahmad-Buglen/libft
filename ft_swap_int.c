@@ -1,39 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_swap_int.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 14:55:48 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/24 18:03:01 by dphyliss         ###   ########.fr       */
+/*   Created: 2019/04/24 19:51:17 by dphyliss          #+#    #+#             */
+/*   Updated: 2019/04/24 19:51:23 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strdup(const char *s1)
+void	ft_swap_int(int *a, int *b)
 {
-	size_t	i;
-	size_t	j;
-	char	*duplicate;
+	int	buf;
 
-	if (s1)
-	{
-		i = 0;
-		while (s1[i] != '\0')
-			i++;
-		duplicate = (char *)malloc(sizeof(char) * i + 1);
-		if (duplicate == NULL)
-			return (NULL);
-		j = 0;
-		while (j <= i)
-		{
-			duplicate[j] = s1[j];
-			j++;
-		}
-		duplicate[j + 1] = '\0';
-		return (duplicate);
-	}
-	return (NULL);
+	buf = *a;
+	*a = *b;
+	*b = buf;
 }

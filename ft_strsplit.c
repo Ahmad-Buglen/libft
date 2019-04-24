@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 09:52:41 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/23 15:53:33 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/24 14:39:00 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char		**check_pointer(char const *s, char c, size_t size)
 	size_t	i;
 	size_t	j;
 
-	str = (char **)malloc(sizeof(char) * size);
+	str = (char **)ft_memalloc(sizeof(char *) * size + 1);
 	if (NULL == str)
 		return (NULL);
 	i = 0;
@@ -61,43 +61,53 @@ char		**check_pointer(char const *s, char c, size_t size)
 		while ((buf[i] != c) && (buf[i] != '\0'))
 			++i;
 	}
+	*str[0] = '\0';
+	free(buf);
 	return (str);
 }
 
 void	memory_free(char **s)
 {
 	free(s);
+	s = NULL;
 }
 
 char		**memory_allocate(char **s, char c, size_t size)
 {
-	int		i;
+	 write(1, "0_o", 3);
+	size_t	i;
+	size_t	j;
 	char	*buffer;
-
-	while ((--size) > 0)
+	
+	j = 0;
+	while (s[j] != '\0')
 	{
 		printf("---");
 		i = 0;
-		while ((*s[i] != c) && (*s[i] != '\0'))
+		while ((s[j][i] != c) && (s[j][i] != '\0'))
 			i++;
 		printf("---");
-		buffer = ft_strdup(*s);
-		*s = (char *)malloc(sizeof(char) * (++i) + 1);
-		if ((NULL == *s) || (NULL == buffer))
+		buffer = ft_strdup(s[j]);
+		s[j] = (char *)malloc(sizeof(char) * (++i) + 1);
+		if ((NULL == s[j]) || (NULL == buffer))
 		{
 			memory_free(s);
+			free(buffer);
 			return (NULL);
 		}
-		i = -1;
-		while ((buffer[++i] != c) && (buffer[i] != '\0'))
+		i = 0;
+		while ((buffer[i] != c) && (buffer[i] != '\0'))
 		{
-			*s[i] = buffer[i];
+			s[j][i] = buffer[i];
 			printf("%c ",buffer[i]);
+			i++;
 		}
-		*s[++i] = '\0';
-		++(*s);
+		s[j][++i] = '\0';
+		++j;
 		free(buffer);
 	}
+	++size;
+	--size;
 	return (s);
 }
 // ft_strsplit("*hello*fellow***students*", ’*’)
@@ -118,12 +128,10 @@ char		**ft_strsplit(char const *s, char c)
 
 int main()
 {
-   printf("---");	
 	char **test1;
 	char **test;
-	printf("---");
 	test = check_pointer("*hello*fellow***students*", '*', 3);
-	printf("---");
+	ft_putendl("here");
 	test1 = memory_allocate(test, '*', 3);
 	int i = -1;
 	while (++i < 3)

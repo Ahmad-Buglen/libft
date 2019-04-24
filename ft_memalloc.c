@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 16:47:11 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/20 16:58:01 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/24 15:41:58 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@ void		*ft_memalloc(size_t size)
 		return (NULL);
 	else
 	{
-		i = -1;
-		while (++i < size)
+		i = 0;
+		while (i < size)
+		{
 			((int *)point)[i] = 0;
+			++i;
+		}
 		return ((void *)point);
 	}
 }

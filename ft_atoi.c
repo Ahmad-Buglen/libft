@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 11:55:05 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/22 12:28:07 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/24 12:05:28 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int				ft_atoi(const char *str)
 {
-	int			i;
+	size_t		i;
 	long int	n;
 	int			sign;
 

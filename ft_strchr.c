@@ -6,15 +6,15 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 12:16:43 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/22 11:39:45 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/24 13:05:29 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char		*ft_strchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
 
 	if ((c > 0) && (s))
 	{

@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 18:29:35 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/22 12:36:13 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/24 14:55:42 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	int		length;
+	size_t	i;
+	size_t	length;
 	char	*point;
 
 	if (s && (f != NULL))

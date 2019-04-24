@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 15:50:10 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/22 11:37:43 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/24 12:11:30 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	int i;
-	int j;
+	size_t	i;
+	size_t	j;
 
 	if (s2)
 	{
