@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_ismaxint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/19 18:20:37 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/27 11:51:47 by dphyliss         ###   ########.fr       */
+/*   Created: 2019/04/27 18:05:37 by dphyliss          #+#    #+#             */
+/*   Updated: 2019/04/27 18:07:46 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int	ft_ismaxint(int n)
 {
-	int	i;
-
-	i = 0;
-	if (!s1 && !s2)
+	if (n == 2147483647)
+		return (1);
+	else
 		return (0);
-	while (s1[i] == s2[i])
-	{
-		if (!s1[i + 1] && !s2[i + 1])
-			return (0);
-		i++;
-	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

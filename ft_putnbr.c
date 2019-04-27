@@ -6,67 +6,34 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 16:11:01 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/24 17:58:09 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/25 14:30:08 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_reverse(char *str, size_t index)
-{
-	char	str1[11];
-	size_t	i;
-
-	--index;
-	i = 0;
-	while (str[i] != '\0')
-		str1[i++] = str[index--];
-	index = 0;
-	while (str[index] != '\0')
-	{
-		str[index] = str1[index];
-		index++;
-	}
-}
-
-int			ft_optime(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return (1);
-	}
-	else if (nb == 0)
-	{
-		ft_putchar('0');
-		return (1);
-	}
-	else
-		return (0);
-}
-
 void		ft_putnbr(int n)
 {
-	char	str[11];
-	size_t	index;
-	int		i;
+	char	*s;
+	int		sign;
+	char	mas[12];
 
-	i = ft_optime(n);
-	if (i != 1)
+	s = &mas[11];
+	if (n == 0)
+		ft_putstr("0");
+	else if (n == -2147483648)
+		ft_putstr("-2147483648");
+	else
 	{
-		index = 0;
-		if (n < 0)
-		{
-			ft_putchar('-');
-			n = -n;
-		}
+		*s = '\0';
+		sign = (n < 0) ? 1 : 0;
+		n = (n < 0) ? -n : n;
 		while (n)
 		{
-			str[index++] = ('0' + (n % 10));
+			*(--s) = ('0' + (n % 10));
 			n /= 10;
 		}
-		str[index] = '\0';
-		ft_reverse(str, index);
-		ft_putstr(str);
+		(sign == 1) ? *(--s) = '-' : 0;
+		ft_putstr(s);
 	}
 }

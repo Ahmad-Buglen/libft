@@ -6,57 +6,33 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 08:14:12 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/23 09:52:19 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/27 12:35:00 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-
 char		*ft_strtrim(char const *s)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
 	char	*str;
-	
+	char	*buf;
+
 	if (s)
 	{
-		i = 0;
-		while (((s[i] == ' ') || (s[i] == '\n') || (s[i] == '\f') \
-				|| (s[i] == '\t') || (s[i] == '\r') || (s[i] == '\v')) \
-					&& (s[i] != '\0'))
-			i++;
-		if (s[i] == '\0')
+		buf = ft_strdup(s);
+		if (NULL == buf)
+			return (NULL);
+		while (((*buf == ' ') || (*buf == '\n') || (*buf == '\t')) && *buf)
+			*(buf++) = '\0';
+		if (!buf)
+			return (buf);
+		else
 		{
-			str = (char *)malloc(sizeof(char) * 1);
-			if (str == NULL) 
-				return (NULL);
-			str[0] = '\0';
-			return (str);
-		}
-		else 
-		{
-			j = ft_strlen(s) - 1;
-			while ((s[j] == ' ') || (s[j] == '\n') || (s[j] == '\t') \
-					|| (s[i] == '\r') || (s[i] == '\v') || (s[i] == '\f'))
-				j--;
-			str = (char *)malloc(sizeof(char) * (j - i) + 1);
-			if (str == NULL)
-				return (NULL);
-			k = 0;
-			while (i <= j)
-				str[k++] = s[i++];
-			str[++i] = '\0';
-			return (str);
+			str = &buf[ft_strlen(buf) - 1];
+			while ((*str == ' ') || (*str == '\n') || (*str == '\t'))
+				*(str--) = '\0';
+			return (buf);
 		}
 	}
 	return (NULL);
 }
-/*
-int main()
-{
-	printf("%s\n", ft_strtrim("  \t \n asdf \t  \n   "));
-	return (0);
-}*/
