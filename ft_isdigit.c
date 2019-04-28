@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 14:13:49 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/20 14:24:44 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/28 14:43:35 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isdigit(int c)
 {
-	if (((unsigned char)c >= '0') && ((unsigned char)c <= '9'))
+	if ((c >= 48) && (c <= 57))
 		return (1);
 	return (0);
 }

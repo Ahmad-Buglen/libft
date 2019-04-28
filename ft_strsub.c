@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/22 14:44:59 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/22 15:19:28 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/28 15:38:00 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len)
 			i++;
 			j++;
 		}
-		sub[i + 1] = '\0';
+		sub[i] = '\0';
 		return (sub);
 	}
 	return (NULL);

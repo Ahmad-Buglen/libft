@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 16:04:55 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/22 11:37:55 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/28 14:20:26 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char		*ft_strncat(char *s1, const char *s2, size_t n)
 	size_t	i;
 	size_t	j;
 
-	if (s2 && (n > 0))
+	if (n > 0)
 	{
 		i = 0;
 		while (s1[i] != '\0')

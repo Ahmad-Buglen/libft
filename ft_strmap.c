@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 18:15:24 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/24 14:56:18 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/28 15:25:41 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,18 @@ char		*ft_strmap(char const *s, char (*f)(char))
 	if (s && (f != NULL))
 	{
 		length = ft_strlen(s);
-		point = (char *)malloc(sizeof(char) * length);
+		point = (char *)malloc(sizeof(char) * length + 1);
 		if (point == NULL)
 			return (NULL);
 		else
 		{
-			i = -1;
-			while (s[++i] != '\0')
+			i = 0;
+			while (s[i])
+			{
 				point[i] = f(s[i]);
+				++i;
+			}
+			point[i] = '\0';
 			return (point);
 		}
 	}

@@ -6,13 +6,13 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/22 15:20:14 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/22 16:07:12 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/28 13:50:18 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
 	char	*str;
