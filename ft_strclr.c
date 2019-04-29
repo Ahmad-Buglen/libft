@@ -18,8 +18,11 @@ void		ft_strclr(char *s)
 
 	if (s)
 	{
-		i = -1;
-		while (s[++i] != '\0')
+		i = 0;
+		while (s[i])
+		{
 			s[i] = '\0';
+			++i;
+		}
 	}
 }

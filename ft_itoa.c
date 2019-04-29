@@ -6,32 +6,43 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 15:06:05 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/28 15:37:23 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/04/29 12:18:55 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa(int n)
+static int			ft_count(int c)
 {
-	char	*s;
-	int		sign;
+	int				q;
 
-	s = (char *)malloc(sizeof(char) * (size_t)12);
-	if (NULL == s)
-		return (NULL);
-	if (n == 0)
-		return ("0");
-	else if (n == -2147483648)
-		return ("-2147483648");
-	(n < 0) ? sign = 1 : 0;
-	(n < 0) ? n = -n : 0;
-	*(s + 12) = '\0';
-	while (n)
+	q = 1;
+	while (c / 10)
 	{
-		*(--s) = ('0' + (n % 10));
-		n /= 10;
+		c = c / 10;
+		q++;
 	}
-	(sign == 1) ? *(--s) = '-' : 0;
-	return (s);
+	return (q);
+}
+
+char				*ft_itoa(int n)
+{
+	int				len;
+	unsigned int	q;
+	char			*res;
+
+	len = ft_count(n);
+	len = (n < 0 ? len + 1 : len);
+	q = (n < 0 ? -n : n);
+	if (!(res = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	res[len--] = '\0';
+	while (len >= 0)
+	{
+		res[len--] = (q % 10) + '0';
+		q /= 10;
+	}
+	if (res[0] == '0' && res[1] != '\0')
+		res[0] = '-';
+	return (res);
 }
