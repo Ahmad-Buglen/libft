@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 13:32:47 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/28 14:13:08 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/05/01 15:42:59 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
 
-	if (n > 0)
+	if (s1 == s2)
+		return(0);
+	else if (n > 0)
 	{
 		i = 0;
 		while (i < n)
@@ -30,7 +32,5 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n)
 			i++;
 		}
 	}
-	else if (s1 == s2)
-		return (0);
 	return (0);
 }
