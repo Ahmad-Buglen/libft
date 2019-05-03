@@ -6,49 +6,47 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 15:37:35 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/05/02 15:26:46 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/05/03 20:07:31 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	void	list_free(t_list	*lst)
+static	int	list_free(t_list *lst)
 {
-	t_list		*buf;
-	
+	t_list	*buf;
+
 	while (lst)
 	{
 		buf = lst;
-		free(lst);
-		lst = buf->next;
+		lst = lst->next;
+		free(buf);
 	}
+	return (1);
 }
 
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*new;
 	t_list	*list;
+	t_list	*buf;
 
 	if (!lst || !f)
 		return (NULL);
-//	if (!(new = (t_list *)malloc(sizeof(t_list))))
-//		return (NULL);
-	new = &lst;
-//	list = f(lst);
-//	if (NULL == list)
-//		return (NULL);
-	while (lst->next)
+	list = f(lst);
+	new = list;
+	while (lst)
 	{
-	//	lst = lst->next;
-		list->next = (t_list *)malloc(sizeof(t_list));
-		if (list->next && f(lst))
-		{
-			list_free(new);
+		buf = (t_list *)malloc(sizeof(t_list));
+		if (!buf && !(f(lst)) && list_free(new))
 			return (NULL);
-		}
-		else 
-			list->next = f(lst);
+		else
+			buf = f(lst);
+		lst = lst->next;
+		list->next = buf;
 		list = list->next;
 	}
+	list->next = NULL;
+	new = new->next;
 	return (new);
 }

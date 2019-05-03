@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 11:55:05 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/05/02 11:17:17 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/05/03 22:03:29 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int				ft_atoi(const char *str)
 
 	n = 0;
 	i = 0;
-	while ((*str == ' ') || (*str == '\n') || (*str == '\t') 
+	while ((*str == ' ') || (*str == '\n') || (*str == '\t')
 			|| (*str == '\f') || (*str == '\r') || (*str == '\v'))
 		++str;
 	sign = (*str == '-') ? -1 : 1;
@@ -34,11 +34,3 @@ int				ft_atoi(const char *str)
 	}
 	return ((sign == -1) ? -n : n);
 }
-/*
-int main()
-{
-	printf("%d \n", atoi(" -"));
-	printf("%d \n", ft_atoi(" -"));
-	return (0);
-}
-*/
