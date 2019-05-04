@@ -6,16 +6,16 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 15:05:45 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/04/28 14:23:32 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/05/04 12:18:58 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+char			*ft_strstr(const char *haystack, const char *needle)
 {
-	int	i;
-	int	j;
+	long int	i;
+	long int	j;
 
 	if (needle[0] == '\0')
 		return ((char *)haystack);
