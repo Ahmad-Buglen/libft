@@ -6,7 +6,7 @@
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 15:43:44 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/05/03 19:58:42 by dphyliss         ###   ########.fr       */
+/*   Updated: 2019/05/14 16:06:33 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+char				*ft_strndup(const char *s1, size_t n);
 long				ft_square(long n);
 long				ft_sqrt(long n);
 long				ft_ismaxlong(long n);

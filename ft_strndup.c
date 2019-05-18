@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/25 14:50:39 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/05/06 16:08:36 by dphyliss         ###   ########.fr       */
+/*   Created: 2019/05/14 15:59:36 by dphyliss          #+#    #+#             */
+/*   Updated: 2019/05/14 16:10:09 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+char		*ft_strndup(const char *s1, size_t n)
 {
-	t_list	*list;
+	size_t	i;
+	char	*duplicate;
 
-	if (!(list = (t_list *)malloc(sizeof(*list))))
+	duplicate = (char *)malloc(sizeof(char) * n + 1);
+	if (duplicate == NULL)
 		return (NULL);
-	if (!content)
+	i = 0;
+	while (i < n)
 	{
-		list->content = NULL;
-		list->content_size = 0;
+		duplicate[i] = s1[i];
+		++i;
 	}
-	else
-	{
-		if (!(list->content = malloc(content_size)))
-			return (NULL);
-		ft_memcpy(list->content, content, content_size);
-		list->content_size = content_size;
-	}
-	list->next = NULL;
-	return (list);
+	duplicate[n] = '\0';
+	return (duplicate);
 }

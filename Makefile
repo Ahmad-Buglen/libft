@@ -6,7 +6,7 @@
 #    By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/13 23:03:53 by dphyliss          #+#    #+#              #
-#    Updated: 2019/04/29 16:59:05 by dphyliss         ###   ########.fr        #
+#    Updated: 2019/05/14 16:07:48 by dphyliss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS = ft_atoi.c	ft_lstadd.c	ft_memdel.c	ft_sqrt.c	ft_striteri.c	ft_strnstr.c \
 	   ft_ismaxlong.c	ft_memccpy.c	ft_putnbr.c	ft_strdel.c	ft_strncmp.c	ft_toupper.c \
 	   ft_isminint.c	ft_memchr.c	ft_putnbr_fd.c	ft_strdup.c	ft_strncpy.c \
 	   ft_isprint.c	ft_memcmp.c	ft_putstr.c	ft_strequ.c	ft_strnequ.c \
-	   ft_itoa.c	ft_memcpy.c	ft_putstr_fd.c	ft_striter.c	ft_strnew.c \
+	   ft_itoa.c	ft_memcpy.c	ft_putstr_fd.c	ft_striter.c	ft_strnew.c	ft_strndup.c \
 
 OBJECTS = $(SRCS:.c=.o)
 
