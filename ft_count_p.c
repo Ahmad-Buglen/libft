@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_count_p.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dphyliss <dphyliss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 13:38:22 by dphyliss          #+#    #+#             */
-/*   Updated: 2020/03/13 20:01:53 by dphyliss         ###   ########.fr       */
+/*   Created: 2020/06/23 18:18:06 by dphyliss          #+#    #+#             */
+/*   Updated: 2020/06/27 14:18:51 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, size_t len)
+unsigned long long	ft_count_p(unsigned long long number, const int base)
 {
-	size_t	i;
+	int				count;
 
-	i = 0;
-	while (i < len)
+	count = 1;
+	while (number / base)
 	{
-		dst[i] = src[i];
-		i++;
+		number /= base;
+		count++;
 	}
-	return (dst);
+	return (count);
 }

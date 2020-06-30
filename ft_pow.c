@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dphyliss <dphyliss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 13:38:22 by dphyliss          #+#    #+#             */
-/*   Updated: 2020/03/13 20:01:53 by dphyliss         ###   ########.fr       */
+/*   Created: 2020/06/23 18:17:27 by dphyliss          #+#    #+#             */
+/*   Updated: 2020/06/23 18:52:15 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, size_t len)
+unsigned long long	ft_pow(unsigned long long number, int grade)
 {
-	size_t	i;
+	unsigned long long	rezult;
 
-	i = 0;
-	while (i < len)
+	rezult = 1;
+	while (grade)
 	{
-		dst[i] = src[i];
-		i++;
+		if (grade & 1)
+			rezult *= number;
+		number *= number;
+		grade >>= 1;
 	}
-	return (dst);
+	return (rezult);
 }

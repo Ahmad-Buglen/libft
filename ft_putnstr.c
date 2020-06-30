@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dphyliss <dphyliss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 13:38:22 by dphyliss          #+#    #+#             */
-/*   Updated: 2020/03/13 20:01:53 by dphyliss         ###   ########.fr       */
+/*   Created: 2020/06/23 18:16:41 by dphyliss          #+#    #+#             */
+/*   Updated: 2020/06/23 18:47:26 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, size_t len)
+void	ft_putnstr(char const *const str, const size_t length)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < len)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	return (dst);
+	if (str)
+		write(1, str, length);
 }

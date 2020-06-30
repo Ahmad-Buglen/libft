@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_free_dual_char.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dphyliss <dphyliss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dphyliss <admin@dphyliss.42>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 13:38:22 by dphyliss          #+#    #+#             */
-/*   Updated: 2020/03/13 20:01:53 by dphyliss         ###   ########.fr       */
+/*   Created: 2019/11/30 16:25:26 by dphyliss          #+#    #+#             */
+/*   Updated: 2019/12/09 18:41:50 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, size_t len)
+void	ft_free_dual_char(char ***str)
 {
-	size_t	i;
+	char **buf;
 
-	i = 0;
-	while (i < len)
+	buf = *str;
+	while (*buf)
 	{
-		dst[i] = src[i];
-		i++;
+		ft_strdel(&(*buf));
+		++buf;
 	}
-	return (dst);
+	free(*str);
+	*str = NULL;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dphyliss <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dphyliss <dphyliss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 15:43:44 by dphyliss          #+#    #+#             */
-/*   Updated: 2019/05/14 16:06:33 by dphyliss         ###   ########.fr       */
+/*   Updated: 2020/06/23 18:29:33 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
+
+# define BUFF_SIZE 42
 
 typedef struct		s_list
 {
@@ -24,6 +27,21 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_listg
+{
+	int				fd;
+	char			*str;
+	struct s_listg	*next;
+}					t_list_gnl;
+
+int					ft_cinstr(char const *const storage,
+								char const *const desire);
+void				ft_putnstr(char const *const str, const size_t length);
+unsigned long long	ft_pow(unsigned long long number, int grade);
+unsigned long long	ft_count_p(unsigned long long number, const int base);
+int					ft_abs(int n);
+void				ft_free_dual_char(char ***str);
+int					get_next_line(const int fd, char **line);
 char				*ft_strndup(const char *s1, size_t n);
 long				ft_square(long n);
 long				ft_sqrt(long n);
@@ -89,5 +107,6 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_lstgnladd(t_list_gnl **alst, t_list_gnl *new);
 
 #endif
