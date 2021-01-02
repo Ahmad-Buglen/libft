@@ -6,11 +6,11 @@
 /*   By: dphyliss <dphyliss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/01 19:12:33 by dphyliss          #+#    #+#             */
-/*   Updated: 2020/07/01 19:12:47 by dphyliss         ###   ########.fr       */
+/*   Updated: 2020/07/15 16:27:47 by dphyliss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "libft.h"
 
 int		ft_is_space(const int c)
 {
