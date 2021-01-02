@@ -6,10 +6,10 @@ This project is about re-write standard libc(and some additional) functions for 
 
  4 sections:
 
-1.  **Libc Functions:** Some of the standard C functions
-2.  **Additional functions:** Functions 42 deems will be useful for later projects
-3.  **Bonus Functions:** Functions 42 deems will be useful for linked list manipulation
-4.  **Personal Functions:** Functions I believe will be useful later.
+1.  **Libc Functions:** Standard C functions
+2.  **Additional functions:** Functions will be useful for later projects
+3.  **Bonus Functions:** Functions will be useful for linked list manipulation.
+4.  **Personal Functions:** Functions I will be useful later.
 
 Libc functions | Additional functions | Bonus Functions | Personal Functions
 :----------- | :-----------: | :-----------: | -----------:
